@@ -1,0 +1,119 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+h1{
+    text-transform: uppercase;
+    font-family: 'Poiret One', cursive;
+    font-weight:bold;
+}
+
+.bg1{
+    background-color: white;
+    color: black;
+    margin-top:0;
+    text-align: center;
+}
+
+.img{
+  height:100vh;
+  object-fit: cover;
+}
+
+.img_caroussel{
+    width:500px;
+    height:700px;
+    object-fit:cover;
+}
+
+.bg1 > h1 > #caffiche {
+  color: black;
+}
+
+.bg1 > hr {
+  background-color: red;
+  width: 300px;
+}
+
+.carousel {
+    position: relative;
+    background: white;
+    padding-bottom:2%;
+}
+
+  .carousel-cell {
+    width: auto;
+    height:auto;
+    margin-right:15px;
+    background: transparent;
+    counter-increment: gallery-cell;
+}
+
+  .text-descrip {
+    font-size: 15px;
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+  .text-descrip > h2 {
+    text-align: center;
+}
+
+  .descrip > h1 {
+    text-align: center;
+}
+
+  .descrip > hr {
+    background-color: red;
+    width: 320px;
+}
+
+  /* cell number */
+  .carousel-cell:before {
+    display: block;
+    text-align: center;
+
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+}
+
+
+  .parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+
+/*footer*/
+
+
+  /*media query*/
+
+  @media only screen and (max-width: 1199px) {
+
+  }
+
+  @media only screen and (max-width: 880px) {
+
+
+  @media only screen and (max-width: 767px) {
+    .m-nav-toggle {
+      margin-left: 30%;
+    }
+    #Navbar{
+      display:none;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+
+    }
+    @media only screen and (max-width: 576px) {
+
+      .m-nav-toggle {
+        margin-left: 15%;
+      }
+
+      }
