@@ -31,11 +31,6 @@ h1{
   color: black;
 }
 
-.bg1 > hr {
-  background-color: red;
-  width: 300px;
-}
-
 .carousel {
     position: relative;
     background: white;
@@ -63,11 +58,6 @@ h1{
 
   .descrip > h1 {
     text-align: center;
-}
-
-  .descrip > hr {
-    background-color: red;
-    width: 320px;
 }
 
   /* cell number */

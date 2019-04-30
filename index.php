@@ -49,7 +49,6 @@
     </div>
     <div class="bg1">
         <h1 id="caffiche">à l' affiche</h1>
-        <hr>
     <div class="carousel mt-5" data-flickity>
         <div class="carousel-cell"><img class="img_caroussel" src="img/creed.jpg"></div>
         <div class="carousel-cell"><img class="img_caroussel" src="img/avengers.jpg"></div>
@@ -68,7 +67,6 @@
 
       <div class="descrip">
             <h1>ALLOCINEMET</h1>
-            <hr>
         <div class="container-fluid col-12 mx-auto my-5">
             <div class="image float-left col-4">
                 <img src="https://i.ytimg.com/vi/GXM838nBLuw/maxresdefault.jpg"  class="img-fluid" alt="Responsive image">
@@ -87,6 +85,7 @@
             </div>
         </div>
       </div>
+      <?php include('footer.php');?>
 
     <script src="js/app.js"></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

@@ -22,20 +22,8 @@
 
 <body>
   <?php include('header.php');?>
+  <?php include('bdd.php');?>
   <?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-
-  try {
-      $bdd = new PDO("mysql:host=$servername;dbname=test;chartset=UTF8", $username, $password);
-      // set the PDO error mode to exception
-      $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      }
-  catch(PDOException $e)
-      {
-      echo "Connection failed: " . $e->getMessage();
-      }
       $requete = "SELECT Titre, Description, Duree, Image FROM Film WHERE ID_Film=" . $_GET["id"];
       $reponse = $bdd->query($requete);
 ?>
@@ -91,13 +79,6 @@
 </div>
 </div>
 
-  <div class="col-1 col-sm-3 col-md-3 col-lg-1 col-xl-1"></div>
-  <div class="col-8 col-sm-8 col-md-8 col-lg-4 col-xl-4">
-    <iframe class="shadow-lg p-3 mb-5 bg-light rounded" src="" height="250px" width="450px"></iframe>
-  </div>
-
-<div class="col-2 col-sm-2 col-md-2 col-lg-1 col-xl-1"></div>
-
 </div>
 
   </main>
@@ -107,7 +88,7 @@
   $reponse->closeCursor();
   ?>
 
-  <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
+  <?php include('footer.php');?>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

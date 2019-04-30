@@ -8,9 +8,10 @@
 ----pour le footer------
 -------------------------------*/
 #footer {
-  background-color: black;
+  margin-top: 10%;
+  background-color: #999999;
   font-family: 'Roboto Condensed', sans-serif;
-  border-block-start: solid 5px #47474773;
+  width: 100%;
 }
 
 #footer a {
