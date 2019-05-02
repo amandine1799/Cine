@@ -66,13 +66,18 @@ html, body {
   width: 35%;
 }
 
+.filmo {
+  margin: 100px;
+  background-color: white;
+}
+
 
 /*-----------------------------------------
 ----pour l'image du film sur content------
 -----------------------------------------*/
 
 #content .media {
-  width: 25%;
+  width: 330px;
   height: 430px;
   margin: 20px auto;
 }

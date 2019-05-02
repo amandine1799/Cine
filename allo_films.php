@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/allo_films.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="shortcut icon" href="https://www.cinemet.fr/favicon.ico">
 
 </head>
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="https://www.cinemet.fr/favicon.ico">
     <title>Acteur</title>
 
 <!-- Bootstrap CSS -->
@@ -26,7 +27,7 @@
     <?php include('header.php');?>
     <?php include('bdd.php');?>
     <?php
-    $requete = "SELECT ID_Acteur, Nom, Naissance, Bio, Image FROM Acteur";
+    $requete = "SELECT * FROM Role, Acteur WHERE ID_Film=" . $idfilm . " AND Role.ID_Acteur=Acteur.ID_Acteur";
     $reponse = $bdd->query($requete);
     ?>
     <?php
@@ -37,7 +38,7 @@
 
         <!--  pour le titre -->
         <div class="hoofd">
-          <h1 class="text-uppercase"><?php echo $donnees['Nom']; ?></h1>
+          <h1 class="text-uppercase"><?php echo $donnees['Acteur']; ?></h1>
       </div>
 
 <!-- pour la partie carte d'identité et sa photo -->
@@ -67,29 +68,18 @@
 
 <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
 
-  <iframe class="shadow p-3 mb-5 bg-light rounded" src="img/<?php echo $donnees['Image']; ?>" height="450px" width="350px"></iframe>
+  <iframe class="shadow p-3 mb-5 bg-light rounded" src="img/<?php echo $donnees['Image']; ?>" height="439px" width="340px"></iframe>
 
 </div>
 <div class="col-3 col-sm-3 col-md-2 col-lg-2 col-xl-1"></div>
 
-</div>
 </div>
 
 
 <!--  pour la descrition du parcours cinématographique de l'acteur  -->
 
 
-    <p class="text-center shadow-lg p-3 mb-5 bg-light rounded">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <p class="filmo"><?php echo $donnees['Filmographie']; ?>
     </p>
 
 
@@ -119,38 +109,5 @@
 <?php include('footer.php');?>
 
       <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
-
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-<script>
-
-      $('.m-nav-toggle').click(function(e){
-        e.preventDefault();
-        $('#Navbar').toggleClass('is-open');
-    })
-
-document.addEventListener('DOMContentLoaded', function () {
-    window.onscroll = function (ev) {
-        document.getElementById("cRetour").className = (window.pageYOffset > 100) ? "cVisible" :
-            "cInvisible";
-    };
-});
-
-$('#sidebarCollapse').click(function (e) {
-    e.preventDefault();
-    $('#sidebar').toggleClass('active');
-})
-
-function openModal() {
-    document.getElementById("modal").style.top = "0px";
-}
-
-function closeModal() {
-    document.getElementById("modal").style.top = "-780px";
-}</script>
-
 </body>
 </html>
