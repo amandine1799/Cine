@@ -1,7 +1,7 @@
-* {
-  margin: 0;
+html, body {
   padding: 0;
-  box-sizing: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 /*------------------------------
@@ -9,7 +9,7 @@
 -------------------------------*/
 
 #content, #real, #acteur {
-  background-color: #dadba7;
+  background-color: white;
   padding-bottom: 20px;
 }
 
@@ -30,14 +30,14 @@
 -------------------------------*/
 
 #content .hoofd, #real .hoofd, #acteur .hoofd {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    min-height: 20vh;
-    background-color: #474747;
-    padding-bottom: 1%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 1%;
+  width: 100%;
+  min-height: 18vh;
+  background-color: black;
 }
 
 #content h1, #real h1, #acteur h1 {
@@ -52,11 +52,11 @@
 }
 
 #content h1, #real h1 {
-  color: #c7c3c3;
+  color: white;
 }
 
 #acteur h1{
-  color: #dadba7;
+  color: black;
 }
 
  .fleches_2 {
