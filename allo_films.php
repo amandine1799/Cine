@@ -26,8 +26,9 @@
     $reponse = $bdd->query($requete);
     ?>
 
-    <div class="affiches-films">
-      <div class="titre">Nouveautés</div>
+
+    <div class="titre">Nouveautés</div>
+      <div class="affiches-films">
       <?php
       while($donnees = $reponse->fetch())
       {
@@ -39,6 +40,7 @@
         <?php
       }
       ?>
+    </div>
 
     <?php
     $reponse->closeCursor();

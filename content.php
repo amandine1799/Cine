@@ -24,7 +24,7 @@
   <?php include('header.php');?>
   <?php include('bdd.php');?>
   <?php
-      $requete = "SELECT Titre, Description, Duree, Image FROM Film WHERE ID_Film=" . $_GET["id"];
+      $requete = "SELECT Titre, Description, Duree, Image, Video FROM Film WHERE ID_Film=" . $_GET["id"];
       $reponse = $bdd->query($requete);
 ?>
   <main id="content">
@@ -78,6 +78,12 @@
   </a>
 </div>
 </div>
+<div class="col-1 col-sm-3 col-md-3 col-lg-1 col-xl-1"></div>
+ <div class="col-8 col-sm-8 col-md-8 col-lg-4 col-xl-4">
+   <iframe class="shadow-lg p-3 mb-5 bg-light rounded" src="<?php echo $donnees['Video']; ?>" height="250px" width="450px"></iframe>
+ </div>
+
+<div class="col-2 col-sm-2 col-md-2 col-lg-1 col-xl-1"></div>
 
 </div>
 
