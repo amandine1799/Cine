@@ -49,6 +49,11 @@ body {
 }
 
 /********************************** LISTE FILMS ***********************************/
+.list-group {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
 
 .affiches-films {
   display: flex;

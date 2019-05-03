@@ -17,6 +17,5 @@
     <div class="nav-links">
       <a href="allo_films.php">films</a>
       <a href="contact.php">contact</a>
-      <a href="realisateur.php">réalisateurs</a>
     </div>
 </nav>
