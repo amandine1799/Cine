@@ -45,6 +45,7 @@ nav > .nav-links > a {
   letter-spacing: .5px;
   text-decoration: none;
   color: white;
+  font-weight: bold;
 }
 
 nav > .nav-links > a:hover {
