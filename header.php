@@ -16,8 +16,7 @@
     <input type="checkbox" id="nav-check">
     <div class="nav-links">
       <a href="allo_films.php">films</a>
-      <a href="#contact">contact</a>
-      <a href="acteur.php">acteurs</a>
-      <a href="#rea">réalisateurs</a>
+      <a href="contact.php">contact</a>
+      <a href="realisateur.php">réalisateurs</a>
     </div>
 </nav>

@@ -18,16 +18,16 @@
 
 <body>
   <?php include('header.php');?>
+
     <div class="header_films">
         <h1>NOS FILMS</h1>
     </div>
-    <?php include('bdd.php');?>
+    <?php
+     include('bdd.php');?>
     <?php
     $requete = "SELECT ID_Film, Titre, Description, Duree, Image FROM Film";
     $reponse = $bdd->query($requete);
     ?>
-
-
     <div class="titre">Nouveautés</div>
       <div class="affiches-films">
       <?php
