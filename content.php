@@ -18,91 +18,76 @@
   <link rel="stylesheet" href="css/style_pages_cont_real_act.css">
 
 </head>
-
-<body>
-  <?php include('header.php');?>
-  <?php include('bdd.php');?>
-  <?php
-      $idfilm = $_GET["id"];
-      $resFilm = $bdd->prepare("SELECT Titre, Description, Duree, Image, Video FROM Film WHERE ID_Film=?");
-      $resFilm->execute(array($idfilm));
-      $film = $resFilm->fetch();
-      $resFilm->closeCursor();
-
-      $resActeur = $bdd->prepare("SELECT * FROM Role, Acteur WHERE ID_Film=? AND Role.ID_Acteur=Acteur.ID_Acteur");
-      $resActeur->execute(array($idfilm));
-
-      $resRea = $bdd->prepare("SELECT * From Realisateur WHERE ID_Rea=?");
-      $resRea->execute(array($idfilm));
-?>
-  <main id="content">
-    <div class="hoofd">
-      <h1 class="text-uppercase"><?php echo $film['Titre']; ?></h1>
-    </div>
-    </div>
+  <body>
+    <?php include('header.php');?>
+    <?php include('bdd.php');?>
+    <?php include('requete.php');?>
+    <main id="content">
+      <div class="hoofd">
+        <h1 class="text-uppercase"><?php echo $film['Titre']; ?></h1>
+      </div>
+      </div>
 
 
-    <!-- pour l'image du film -->
-    <div class="media shadow-lg p-3 mb-5 bg-light rounded">
-      <img src="img/<?php echo $film['Image']; ?>" class="mr-3" alt="...">
-    </div>
+      <!-- pour l'image du film -->
+      <div id="affiche-img">
+        <img src="img/<?php echo $film['Image']; ?>" class="mr-3" alt="...">
+      </div>
+      <!-- pour la description du film -->
 
-    <!-- pour la description du film -->
+      <p class="text-center bg-light"><?php echo $film['Description']; ?>
+      </p>
 
-    <p class="text-center bg-light"><?php echo $film['Description']; ?>
-    </p>
+      <!-- pour la partie récap d'infos et la bande annonce -->
 
-    <!-- pour la partie récap d'infos et la bande annonce -->
+      <div class="row">
+        <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
+        <div class="col-10 col-sm-10 col-md-10 col-lg-4 col-xl-5">
 
-    <div class="row">
-      <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
-      <div class="col-10 col-sm-10 col-md-10 col-lg-4 col-xl-5">
-
-        <div class="list-group">
-          <div class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Réalisateur</h5>
-            </div>
-            <?php
-                While ($rea = $resRea->fetch()) {
-            ?>
-            <p class="mb-1">
-              <a href="realisateur.php?id=<?php echo $rea["ID_Rea"]; ?>"><?php echo $rea["Nom"]; ?></a>
-            </p>
-            <?php
-                  }
-                  $resRea->closeCursor();
-            ?>
-          </div>
-          <div class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Acteurs</h5>
-            </div>
-            <?php
-                  While ($acteur = $resActeur->fetch()) {
+          <div class="list-group">
+            <div class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Réalisateur</h5>
+              </div>
+              <?php
+                  While ($rea = $resRea->fetch()) {
               ?>
-            <p class="mb-1">
-              <ul><li><a href="acteur.php?id=<?php echo $acteur["ID_Acteur"]; ?>"><?php echo $acteur["Nom"]; ?></a></li></ul>
-            </p>
-            <?php
-                  }
-                  $resActeur->closeCursor();
-            ?>
+              <p class="mb-1">
+                <a href="realisateur.php?id=<?php echo $rea["ID_Rea"]; ?>"><?php echo $rea["Nom"]; ?></a>
+              </p>
+              <?php
+                    }
+                    $resRea->closeCursor();
+              ?>
+            </div>
+            <div class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Acteurs</h5>
+              </div>
+              <?php
+                    While ($acteur = $resActeur->fetch()) {
+                ?>
+              <p class="mb-1">
+                <ul><li><a href="acteur.php?id=<?php echo $acteur["ID_Acteur"]; ?>"><?php echo $acteur["Nom"]; ?></a></li></ul>
+              </p>
+              <?php
+                    }
+                    $resActeur->closeCursor();
+              ?>
+            </div>
           </div>
         </div>
+
+        <div class="col-1 col-sm-3 col-md-3 col-lg-1 col-xl-1"></div>
+        <div class="col-8 col-sm-8 col-md-8 col-lg-4 col-xl-4">
+          <iframe class="shadow-lg p-3 mb-5 bg-light rounded" src="<?php echo $film['Video']; ?>" height="320px" width="530px"></iframe>
+        </div>
+
+        <div class="col-2 col-sm-2 col-md-2 col-lg-1 col-xl-1"></div>
+
       </div>
 
-      <div class="col-1 col-sm-3 col-md-3 col-lg-1 col-xl-1"></div>
-      <div class="col-8 col-sm-8 col-md-8 col-lg-4 col-xl-4">
-        <iframe class="shadow-lg p-3 mb-5 bg-light rounded" src="<?php echo $film['Video']; ?>" height="320px" width="530px"></iframe>
-      </div>
-
-      <div class="col-2 col-sm-2 col-md-2 col-lg-1 col-xl-1"></div>
-
-    </div>
-
-  </main>
-  <?php include('footer.php');?>
-</body>
-
+    </main>
+    <?php include('footer.php');?>
+  </body>
 </html>

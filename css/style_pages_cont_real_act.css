@@ -18,7 +18,7 @@ html, body {
 }
 
 #acteur {
-  background-color: #c7c3c3;
+  background-color: white;
   border-bottom: 1px solid #474747;
 }
 
@@ -80,6 +80,15 @@ html, body {
   width: 330px;
   height: 430px;
   margin: 20px auto;
+}
+
+#affiche-img {
+  padding-top: 20px;
+  text-align: center;
+}
+
+#affiche-img > img {
+  width: 405px;
 }
 
 
