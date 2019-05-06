@@ -1,14 +1,29 @@
 <?php
-/* Page content : id des pages / affiche les films, noms etc */
-    $idfilm = $_GET["id"];
+
+function get_film($bdd, $idfilm) {
     $resFilm = $bdd->prepare("SELECT Titre, Description, Duree, Image, Video FROM Film WHERE ID_Film=?");
     $resFilm->execute(array($idfilm));
     $film = $resFilm->fetch();
     $resFilm->closeCursor();
-/* Page content : affiche réa */
+
+    return $film;
+}
+
+function get_acteurs($bdd, $idfilm) {
     $resActeur = $bdd->prepare("SELECT * FROM Role, Acteur WHERE ID_Film=? AND Role.ID_Acteur=Acteur.ID_Acteur");
     $resActeur->execute(array($idfilm));
-/* Page content : affiche réa */
+    return $resActeur;
+}
+
+function get_realisateurs($bdd, $idfilm) {
     $resRea = $bdd->prepare("SELECT * From Realisateur WHERE ID_Rea=?");
     $resRea->execute(array($idfilm));
+    return $resRea;
+}
+
+function get_all_films($bdd) {
+    $requete = "SELECT ID_Film, Titre, Description, Duree, Image FROM Film";
+    $reponse = $bdd->query($requete);
+    return $reponse;
+}
 ?>

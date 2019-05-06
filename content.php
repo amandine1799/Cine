@@ -22,6 +22,9 @@
     <?php include('header.php');?>
     <?php include('bdd.php');?>
     <?php include('requete.php');?>
+    <?php $film = get_film($bdd, $_GET['id']); ?>
+    <?php $resRea = get_realisateurs($bdd, $_GET['id']); ?>
+    <?php $resActeur = get_acteurs($bdd, $_GET['id']); ?>
     <main id="content">
       <div class="hoofd">
         <h1 class="text-uppercase"><?php echo $film['Titre']; ?></h1>

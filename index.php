@@ -14,12 +14,10 @@
   </head>
 
   <body>
-    <?php include('header.php');?>
-    <?php include('bdd.php');?>
-    <?php
-    $requete = "SELECT ID_Film, Titre, Description, Duree, Image FROM Film";
-    $reponse = $bdd->query($requete);
-    ?>
+    <?php include('requete.php'); ?>
+    <?php include('header.php'); ?>
+    <?php include('bdd.php'); ?>
+    <?php $reponse = get_all_films($bdd); ?>
 
     <div onmouseover="nav2()" id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
