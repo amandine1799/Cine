@@ -5,7 +5,6 @@ function get_film($bdd, $idfilm) {
     $resFilm->execute(array($idfilm));
     $film = $resFilm->fetch();
     $resFilm->closeCursor();
-
     return $film;
 }
 

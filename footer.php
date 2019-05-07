@@ -1,13 +1,10 @@
 <link rel="stylesheet" href="css/footer.css">
 
 <footer id="footer" class="page-footer font-small text-white mdb-color pt-4 sticky bottom">
-
     <!-- Footer Links -->
     <div class="container text-center text-md-left ">
-
       <!-- Footer links -->
       <div class="row text-center text-md-left mt-3 pb-3 mx-auto">
-
         <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
           <h5 class=" text-uppercase mb-4  font-weight-bold text-white"><a href="index.php"> AllocineMET</a></h5>
@@ -15,9 +12,7 @@
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
         <!-- Grid column -->
-
         <hr class="w-100 clearfix d-md-none">
-
         <!-- Grid column -->
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 text-center">
           <h5 class="text-uppercase mb-4 font-weight-bold">Films à l'affiche</h5>
@@ -35,43 +30,27 @@
           </p>
         </div>
         <!-- Grid column -->
-
         <hr class="w-100 clearfix d-md-none">
-
-
         <!-- Grid column -->
         <hr class="w-100 clearfix d-md-none">
-
         <!-- Grid column -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
           <h5 class="text-uppercase mb-4 font-weight-bold"><a href="contact.php">Contact</a></h5>
-          <p>
-            AllocineMET</p>
-          <p>
-            www.AllocineMET.net</p>
-          <p>
-             TEL +33 6 52 50 05 35</p>
-          <p>
-             TEL +33 6 87 26 69 70</p>
+          <p>AllocineMET</p>
+          <p>www.AllocineMET.net</p>
+          <p>TEL +33 6 52 50 05 35</p>
+          <p>TEL +33 6 87 26 69 70</p>
         </div>
         <!-- Grid column -->
-
       </div>
       <!-- Footer links -->
-
       <hr class="hr-footer">
-
       <!-- Grid row -->
       <div class="row d-flex align-items-center">
-
         <!-- Grid column -->
         <div class="col-md-7 col-lg-8">
-
           <!--Copyright-->
-      <p class="text-center text-md-left">© 2019 Copyright: AllocineMET
-
-          </p>
-
+          <p class="text-md-left">© 2019 Copyright: AllocineMET</p>
         </div>
         <!-- Grid column -->
 

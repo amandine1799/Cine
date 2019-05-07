@@ -23,12 +23,9 @@
       <li class="list-group-item">Science-Fiction</li>
       <li class="list-group-item">Fantastique</li>
     </ul>
-    <?php
-       include('bdd.php');?>
-    <?php
-      $requete = "SELECT ID_Film, Titre, Description, Duree, Image FROM Film";
-      $reponse = $bdd->query($requete);
-      ?>
+    <?php include('bdd.php');?>
+    <?php include('requete.php');?>
+    <?php $reponse = get_all_films($bdd); ?>
     <div class="titre">Nouveautés</div>
     <div class="affiches-films">
       <?php
