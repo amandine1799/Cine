@@ -12,7 +12,21 @@
     <?php include('header.php');?>
     <?php include('bdd.php');?>
 
-    <form>
+    <?php
+    // Vérifie si le formulaire a été envoyé
+    if (isset($_POST["valider"])) {
+        // Si un champ est vide, alors on lui dit de finir son boulot
+        if ($_POST["nom"] == "" || $_POST["prenom"] == "" || $_POST["mail"] == "" || $_POST["message"] == "" ) {
+           echo "Erreur";
+        }
+        else { // Sinon, ben on insère le message en base
+          $rescontact = $bdd->prepare("INSERT INTO Contact (nom, prenom, mail, message) VALUES (?, ?, ?, ?)");
+          $rescontact->execute(array($_POST["nom"], $_POST["prenom"], $_POST["mail"], $_POST["message"]));
+          echo "Envoyé";
+        }
+    }
+    ?>
+    <form method="post">
       <div class="content">
         <div class="form-row">
           <div class="form-group col-md-6">
@@ -25,7 +39,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="inputAddress">Adresse Mail</label>
+          <label for="inputAddress">Mail</label>
           <input type="mail" name="mail" class="form-control" id="inputAddress" placeholder="Mail">
         </div>
           <div class="mb-3">
@@ -36,17 +50,6 @@
       </div>
     </form>
 
-    <?php
-    if (isset ($_POST['valider'])) {
-      $nom = $_POST('nom');
-      $prenom=$_POST('prenom');
-      $mail=$_POST('mail');
-      $message=$_POST('message');
-
-      $sql = 'INSERT INTO Contact VALUES("", "'.$nom.'","'.$prenom.'","'.$mail.'","'.$message.'")';
-      echo $sql;
-    }
-    ?>
     <?php include('footer.php');?>
   </body>
 </html>
