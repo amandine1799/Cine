@@ -16,11 +16,11 @@
     <?php
     // Vérifie si le formulaire a été envoyé
     if (isset($_POST["valider"])) {
-        // Si un champ est vide, alors on lui dit de finir son boulot
+        // Si un champ est vide, on affiche une erreur
         if ($_POST["nom"] == "" || $_POST["prenom"] == "" || $_POST["mail"] == "" || $_POST["message"] == "" ) {
            echo "Erreur";
         }
-        else { // Sinon, ben on insère le message en base
+        else { // Sinon, si tout est bon ça fonctionnera
           $rescontact = $bdd->prepare("INSERT INTO Contact (nom, prenom, mail, message) VALUES (?, ?, ?, ?)");
           $rescontact->execute(array($_POST["nom"], $_POST["prenom"], $_POST["mail"], $_POST["message"]));
           echo "Envoyé";
