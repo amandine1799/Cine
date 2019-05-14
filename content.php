@@ -29,7 +29,6 @@
       <div class="hoofd">
         <h1 class="text-uppercase"><?php echo $film['Titre']; ?></h1>
       </div>
-      </div>
 
 
       <!-- pour l'image du film -->
