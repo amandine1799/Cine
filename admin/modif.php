@@ -18,6 +18,20 @@
   <?php include('../requete.php');?>
   <?php $film = get_film($bdd, $_GET['id']); ?>
     <?php $reponse = get_all_films($bdd); ?>
+    <?php
+    if (isset($_POST["valider"])) {
+        // Si un champ est vide, on affiche une erreur
+        if ($_POST["titre"] == "" || $_POST["descrip"] == "" || $_POST["image"] == "" || $_POST["video"] == "" ) {
+           echo "Erreur";
+        }
+        else {
+    $ajoutfilm = $bdd->prepare("INSERT INTO Film (Titre, Description, Image, Video) VALUES (?, ?, ?, ?)");
+    $ajoutfilm->execute(array($_POST["titre"], $_POST["descrip"], $_POST["image"], $_POST["video"]));
+    echo "Envoyé";
+  }
+}
+    ?>
+<form method="post">
   <main id="content">
     <div class="hoofd">
       <h1 class="text-uppercase"><?php echo $film['Titre']; ?></h1>
@@ -34,13 +48,14 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row">#</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <td><input type="text" name="titre"></td>
+          <td><input type="text" name="descrip"></td>
+          <td><input type="text" name="image"></td>
+          <td><input type="text" name="video"></td>
           <td><button type="submit" name="valider" class="btn btn-dark btn-lg">Valider</button></td>
         </tr>
       </tbody>
     </table>
   </main>
+</form>
 </body>
