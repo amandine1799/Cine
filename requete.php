@@ -1,7 +1,7 @@
 <?php
 
 function get_film($bdd, $idfilm) {
-    $resFilm = $bdd->prepare("SELECT Titre, Description, Duree, Image, Video FROM Film WHERE ID_Film=?");
+    $resFilm = $bdd->prepare("SELECT * FROM Film WHERE ID_Film=?");
     $resFilm->execute(array($idfilm));
     $film = $resFilm->fetch();
     $resFilm->closeCursor();
@@ -21,7 +21,7 @@ function get_realisateurs($bdd, $idfilm) {
 }
 
 function get_all_films($bdd) {
-    $requete = "SELECT ID_Film, Titre, Description, Duree, Image FROM Film";
+    $requete = "SELECT ID_Film, Titre, Description, Image FROM Film";
     $reponse = $bdd->query($requete);
     return $reponse;
 }

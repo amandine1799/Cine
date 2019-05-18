@@ -22,19 +22,32 @@
     <?php include('../bdd.php');?>
     <?php include('../requete.php');?>
     <?php $reponse = get_all_films($bdd); ?>
-    <div class="affiches-films">
+    <ul class="list-group list-group-horizontal">
+      <a class="btn btn-primary btn-sm" href="modif.php">Ajout</a>
+    </ul>
+      <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
       <?php
         while($donnees = $reponse->fetch())
         {
           ?>
-      <a href="modif.php?id=<?php echo $donnees["ID_Film"];?>">
-        <img class="effect" src="../img/<?php echo $donnees["Image"]; ?>" id="action">
-        <p><?php echo $donnees["Titre"]; ?></p>
-      </a>
+      <tr>
+        <th scope="row"><?php echo $donnees["ID_Film"]; ?></th>
+        <td><?php echo $donnees["Titre"]; ?></td>
+        <td><a class="btn btn-primary btn-sm" href="modif.php?id=<?php echo $donnees["ID_Film"]; ?>"><i class="fas fa-edit"></i></a></td>
+      </tr>
       <?php
         }
         ?>
-    </div>
+    </tbody>
+  </table>
 
     <?php
       $reponse->closeCursor();
