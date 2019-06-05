@@ -59,6 +59,7 @@
       $video = $film["Video"];
       $rea = $film["ID_Rea"];
   }
+
   ?>
     <p><a href="index.php">Retour</a></p>
     <form method="post">

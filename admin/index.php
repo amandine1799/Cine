@@ -21,7 +21,12 @@
     </div>
     <?php include('../bdd.php');?>
     <?php include('../requete.php');?>
-    <?php $reponse = get_all_films($bdd); ?>
+    <?php $reponse = get_all_films($bdd);
+    if(isset($_GET['del']) AND !empty($_GET['del'])) {
+      $suppr = $bdd->prepare('DELETE FROM Film WHERE ID_Film = ?');
+      $suppr->execute(array($_GET['del']));
+    }
+    ?>
     <ul class="list-group list-group-horizontal">
       <a class="btn btn-primary btn-sm" href="modif.php">Ajout</a>
     </ul>
@@ -42,6 +47,7 @@
         <th scope="row"><?php echo $donnees["ID_Film"]; ?></th>
         <td><?php echo $donnees["Titre"]; ?></td>
         <td><a class="btn btn-primary btn-sm" href="modif.php?id=<?php echo $donnees["ID_Film"]; ?>"><i class="fas fa-edit"></i></a></td>
+        <td><a class="btn btn-primary btn-sm" href="index.php?del=<?php echo $donnees["ID_Film"]; ?>"><i class="far fa-trash-alt"></i></a></td>
       </tr>
       <?php
         }
